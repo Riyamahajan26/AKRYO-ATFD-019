@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .unity {
+            display: grid;
+            grid-template-columns: repeat(3.1fr);
+            gap: 3px;
+
+        }
+
+        .css {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px;
+            color: brown;
+            font-size: large;
+        }
+
+        .div1 {
+            background-color: blueviolet;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .div2 {
+            background-color: blueviolet;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .div3 {
+            background-color: blueviolet;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+
+        .div4 {
+            background-color: blueviolet;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+
+        .div5 {
+            background-color: blueviolet;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+
+        .div6 {
+            background-color: blueviolet;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+
+        .div7 {
+            background-color: blueviolet;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="unity">
+        <div class="css div1">1</div>
+        <div class="css div2">2</div>
+        <div class="css div1">3</div>
+        <div class="css div1">4</div>
+        <div class="css div1">5</div>
+        <div class="css div1">6</div>
+        <div class="css div1">7</div>
+
+    </div>
+</body>
+
+</html>
