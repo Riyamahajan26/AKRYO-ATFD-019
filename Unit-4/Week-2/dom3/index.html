@@ -1,0 +1,109 @@
+<!-- 26/3  createElement, append, setAttribute, .className-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            background-color: antiquewhite;
+        }
+        .image{
+            width: 50%;
+            margin: 15px;
+        }
+        #multiImgDiv{
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Elements</h1>
+    <div id="container">
+
+    </div>
+    <button onclick="magic()">Show Magic</button>
+
+    <div id="imgDiv">
+
+    </div>
+    <div id="multiImgDiv">
+
+    </div>
+
+
+</body>
+<script>
+    // 1. Declare variable for element
+    // 2. Add some text
+    // 3. Take a location
+    // 4. Append element to that location
+
+    let cont = document.getElementById("container");
+    // let newE1 = document.createElement("h1");
+    // newE1.innerText = "I am heading";
+    // newE1.style.color = "red";
+    // //console.log(newE1);
+
+    // let newE2 = document.createElement("h3");
+    // newE2.innerText = "I am Paragraph";
+    // console.log(newE2);
+
+    // cont.append(newE1);
+    // cont.append(newE2);
+
+    let arr = [
+        "I am heading1",
+        "I am heading2",
+        "I am heading3",
+        "I am heading4",
+        "I am heading5"
+    ];
+    function magic(){
+        for(let i=0;i<arr.length;i++){
+            let createE1 = document.createElement("h5");
+            createE1.innerText = arr[i];
+            cont.append(createE1);
+            createE1.style.color = "red";
+            createE1.style.margin = "1px"
+
+            createE1.className = "head";
+
+            //console.log(arr[i]);
+        }
+    }
+    // attribute name property
+
+    let imgCont = document.getElementById("imgDiv");
+    let Image1 = document.createElement("img");
+
+    Image1.setAttribute("src","https://images.pexels.com/photos/459326/pexels-photo-459326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    Image1.className = "image";
+    imgCont.append(Image1);
+
+    let imgArray = [
+        "https://images.pexels.com/photos/460775/pexels-photo-460775.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/70069/pexels-photo-70069.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/158617/swallow-tail-butterfly-insect-black-158617.jpeg?auto=compress&cs=tinysrgb&w=600"    
+    
+    ] ;
+
+    let multiImgCont = document.getElementById("multiImgDiv");
+    imgArray.forEach((element,index)=>{
+        //console.log(element,index);
+        let newImage = document.createElement("img");
+        newImage.setAttribute("src",element);
+        newImage.className = "newImage";
+        multiImgCont.append(newImage);
+    });
+    
+
+
+
+
+</script>
+</html>

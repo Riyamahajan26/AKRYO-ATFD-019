@@ -1,0 +1,70 @@
+For Filter : <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+
+<body>
+    <h1>Filter</h1>
+
+    <select name="head" id="filter_ID">
+        <option value="heading">SELECT OPTION</option>
+        <option value="heading-1">Heading-1</option>
+        <option value="heading-2">Heading-2</option>
+        <option value="heading-3">Heading-3</option>
+        <option value="heading-4">Heading-4</option>
+        <option value="heading-5">Heading-5</option>
+    </select>
+
+    <div id="headDiv">
+
+    </div>
+    
+</body>
+<script>
+    let arr = [
+        "heading-1",
+        "heading-2",
+        "heading-3",
+        "heading-4",
+        "heading-5"
+    ];
+
+    let filterId = document.getElementById("filter_ID");
+    let headDiv = document.getElementById("headDiv");
+
+    function createDom(arr) {
+        arr.forEach((ele, ind) => {
+            let headingg = document.createElement("h1");
+            headingg.innerText = ele;
+
+            headDiv.append(headingg);
+        });
+    };
+
+    createDom(arr);
+
+    filterId.addEventListener("change", () => {
+        headDiv.innerHTML = null;
+        let filterArray = arr.filter((element, index) => {
+            if (element == filterId.value) {
+                return true;
+            }
+            else {
+                return false;
+              
+            }
+        });
+        
+        
+        // console.log(filterArray);
+        
+        createDom(filterArray);
+    });
+
+</script>
+
+</html> 

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+
+
+     <style>
+
+        body {
+
+            font-family: 
+
+            Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 50px;
+
+        }
+
+        input {
+
+            padding: 10px;
+
+            margin: 10px;
+
+            font-size: 18px;
+
+        }
+
+        button {
+
+            padding: 10px 20px;
+
+            margin: 10px;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+
+    <h2>Simple Calculator</h2>
+
+    <input type="number" id="num1" placeholder="Enter 1st Number">
+
+    <input type="number" id="num2" placeholder="Enter 2nd Number">
+
+    <br>
+
+    <button onclick="calculate('add')">Add</button>
+
+    <button onclick="calculate('subtract')">Subtract</button>
+
+    <button onclick="calculate('multiply')">Multiply</button>
+
+    <button onclick="calculate('divide')">Divide</button>
+
+
+
+  <!-- 2 problem html code  -->
+
+    <input type="text" name="name" id="name">
+
+	<select id="gender">
+
+		<option value="">--</option>
+
+		<option value="male">M</option>
+
+		<option value="female">F</option>
+
+	</select>
+
+	<input type="text" name="email" id="email">
+
+	<input type="text" name="mobile" id="mobile">
+
+	<hr>
+
+	<h1 id="dName">NAME</h1>
+
+    <h2 id="dGender">GENDER</h2>
+
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+
+    <!-- 3 problem html code  -->
+    <button onclick="showFirstName()">FIRSTNAME</button>
+    <button onclick="showLastName()">LASTNAME</button>
+    <button onclick="showFullName()">FIRSTNAME NAME</button>
+    <script>
+
+        // 1st problem dom code 
+
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let result;
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+
+            }
+
+
+
+            switch (operation) {
+
+                case 'add':
+
+                    result = num1 + num2;
+
+                    break;
+
+                case 'subtract':
+
+                    result = num1 - num2;
+
+                    break;
+
+                case 'multiply':
+
+                    result = num1 * num2;
+
+                    break;
+
+                case 'divide':
+
+                    if (num2 === 0) {
+
+                        alert("Cannot divide by zero!");
+
+                        return;
+
+                    }
+
+                    result = num1 / num2;
+
+                    break;
+
+                default:
+
+                    alert("Invalid operation");
+
+                    return;
+
+            }
+
+
+
+            alert("Result: " + result);
+
+        }
+
+
+
+//   2 problem dom code
+
+        function showName() {
+
+			// Show filled name inside h1
+
+            let nameInput = document.getElementById("name");
+
+            let displayName = document.getElementById("dName");
+
+            displayName.textContent = nameInput.value;
+
+		}
+
+
+
+		function showGender() {
+
+
+
+            let gender = document.getElementById("gender");
+
+			let displayGender = document.getElementById("dGender");
+
+            displayGender.textContent = gender.value;
+
+		}
+
+
+
+		function showEmail() {
+
+			// Show the filled email inside h3
+
+            let email  = document.getElementById("email");
+
+			let displayEmail = document.getElementById("dEmail");
+
+            // displayEmail.textContent = email.value;
+
+		// }
+
+
+
+		function showMobile() {
+
+			// Show the filled mobile inside h4
+
+            let mobile  = document.getElementById("mobile");
+
+		    let displayMobile = document.getElementById("dMobile");
+
+            displayMobile.textContent = mobile.value;
+
+ 
+
+
+
+		// }
+
+
+
+		function resetForm() {
+
+			// Reset all the form elements to default values (blank "")
+
+            document.getElementById("name").value= "";
+
+            document.getElementById("gender").value= "";
+
+            document.getElementById("email").value= "";
+
+            document.getElementById("mobile").value= "";
+
+		}
+
+
+
+		function resetDisplay() {
+
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+
+            document.getElementById("dName").textContent = "NAME";
+
+            document.getElementById("dGender").textContent = "GENDER";
+
+            document.getElementById("dEmail").textContent = "EMAIL";
+
+            document.getElementById("dMobile").textContent = "MOBILE";
+
+		}
+
+
+
+// 3 problem dom code 
+
+function showFirstName() {
+
+			    // Complete to show an alert with your first name 
+                alert("riya")
+
+			}
+
+
+
+            function showLastName() {
+
+                // Complete to show an alert with your last name    
+
+                alert("mahajan")         
+
+            }
+
+
+
+            function showFullName() {
+
+                // Complete to show an alert with your full name (firstname lastname)
+
+                alert("riyamahajan")
+
+                                
+
+            }
+
+    </script>
+
+    
+
+</body>
+
+</html>

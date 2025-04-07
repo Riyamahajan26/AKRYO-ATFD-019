@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading{
+            background-color: blue;
+        }
+        .maincontner{
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+        }
+
+        @media screen and ( max-width:768px){
+.heading{
+    background-color: red;
+    text-align: center;
+}
+.maincontner{
+         grid-template-columns: repeat(2,1fr);   
+        }
+        }        
+
+        @media screen and ( max-width:480px){
+.heading{
+    background-color:green;
+    text-align: right;
+}
+.maincontner{
+         grid-template-columns: repeat(1,1fr);   
+        }
+        }        
+    </style>
+</head>
+<body>
+    <h1 class="heading">RESPONSIVE</h1>
+    <div class="maincontner" style="display: flex;text-align: center;  justify-content: center; gap: 20px;" >
+        <div>
+            <img src="https://resizing.flixster.com/Udtx6r1GZHiv5p_T8ePBKNutSuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27088238_v_v13_ab.jpg" alt="">
+            <h1>Good one</h1>
+            <p>Lorem ipsum dolor sit adipisicing elit.</p>
+            <button> BOOK NOW</button>
+        </div>
+
+         <div>
+            <img src="https://resizing.flixster.com/Udtx6r1GZHiv5p_T8ePBKNutSuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27088238_v_v13_ab.jpg" alt="">
+            <h1>Good one</h1>
+            <p>Lorem ipsum dolor sit adipisicing elit.</p>
+            <button> BOOK NOW</button>
+        </div>
+
+         <div>
+            <img src="https://resizing.flixster.com/Udtx6r1GZHiv5p_T8ePBKNutSuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27088238_v_v13_ab.jpg" alt="">
+            <h1>Good one</h1>
+            <p>Lorem ipsum dolor sit adipisicing elit.</p>
+            <button> BOOK NOW</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>by class by combinators</h1>
+
+    <div class="mobile">
+        <button class="btn1">1</button>
+        <button class="btn1">2</button>
+        <button class="btn1">3</button>
+        <button class="btn1">4</button>
+        <button class="btn1">5</button>
+        <button class="btn1">6</button>
+        <button class="btn1">7</button>
+        <button class="btn1">8</button>
+        <button class="btn1">9</button>
+        <button class="btn1">0</button>
+    </div>
+    <h1 id="head">i am heading</h1>
+    <button id="apply" onclick="Applychange()">Apply</button>
+
+</body>
+<script>
+    let btn = document.getElementById("btn")
+    let btn1 = document.getElementsByClassName("btn1")
+
+    // for(let i=0;i<btn1.length;i++){
+    // console.log(btn[1].innertext)
+    //     btn1[i].addEvenListener("click",()=>{
+    //         console.log(btn1[i].innertext)
+    //     })
+    // }
+    for (let i = 0; i < btn1.length; i++) {
+
+        btn1[i].addEvenListener("click", (e) => {
+            console.log(e.currenttarget)
+        })
+    }
+
+
+    let head = document.getElementById("head")
+    let Apply = document.getElementById("Apply")
+    function Applychange() {
+        head.style.backgroundColor = "yellow"
+    }
+</script>
+
+</html>

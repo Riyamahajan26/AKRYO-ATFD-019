@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="text" id="form">
+        <input type="text" name="name" id="" placeholder="name">
+        <br><br>
+        <input type="text" name="email" id="" placeholder="email">
+        <br><br>
+        <select name="course" id="">
+            <option value="">select course </option>
+            <option value="fswd">FSWD </option>
+            <option value="fd">FD </option>
+            <option value="bd">BD </option>
+        </select>
+        <br><br>
+        <input type="submit" value="submit" name="submit">
+    </form>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S No</th>
+                <th>NAME </th>
+                <th>EMAIL</th>
+                <th>course</th>
+                <th>FESS<h>
+                     <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+    </table>
+</body>
+<script>
+    let form = document.createElementById("from");
+    let tablebody = document.getElementById("tablebody")
+
+    let arr = [];
+    form.addEventListener("submit", (a) => {
+        e.preventDefault();
+
+        let obj = {
+            name: form.name.value,
+            email: form.name.value,
+            courese: form.courese.value,
+        };
+        // console.log(obj);
+        arr.push(obj);
+        // console.log(arr);
+        tablebody.innerHTML=null;
+
+        arr.forEach((el, ind) => {
+            let maintr = document.createElement("tr");
+
+            let snTD = document.createElement("td")
+            snTD.innerText = i + 1;
+
+            let nameTd = document.createElement("td")
+            nameTd.innerText = el.name;
+
+            let emailTd = document.createElement("td")
+            emailTd.innerText = el.email;
+
+            let coureseTd = document.createElement("td")
+            coureseTd.innerText = el.courese;
+
+            let fessTd = document.createElement("td")
+            fessTd.innerText = el.fess;
+            el.courese == "fswd"
+                ? (fessTd.innerText = "Rs.9999")
+                : el.courese == "fd"
+                    ? (fessTd.innerText = "Rs.7999")
+                    : el.courese == "bd"
+                        ? (fessTd.innerText = "Rs.5999")
+                        :null;
+                        let deleteTd = document.createElement("td")
+                        deleteTd.innerText = "delete"
+                        deleteclassname="delete"
+                        Remove(ind)
+            tablebody.append(maintr)
+            maintr.append(snTD, nameTd, emailTd, coureseTd,fessTd,deleteTd)
+        })
+
+
+    })
+
+</script>
+
+</html>

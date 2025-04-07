@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="heading">Dom1</h1>
+    <button id="btn">Click me</button>
+    <button id="btn1">Again Click</button><br><br> -->
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <select id="gender" >
+		<option value="">Selest gender</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email" placeholder="Enter email">
+	<input type="text" name="mobile" id="mobile" placeholder="Enter number">
+	
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+    <button onclick="resetDisplay()">RESET DISPLAY</button>
+</body>
+<script>
+    let name = document.getElementById("name");
+    let dName = document.getElementById("dName");
+    
+    let gen = document.getElementById("gender");
+    let dGen = document.getElementById("dGender");
+
+    let mail = document.getElementById("email");
+    let dMail = document.getElementById("dEmail");
+
+    let mob = document.getElementById("mobile");
+    let dMob = document.getElementById("dMobile");
+    
+    function showName() {
+        dName.innerText = Name {name.value};                   
+	}
+    function showGender() {
+        dGen.innerText = Gender : ${gen.value};
+	}
+	function showEmail() {
+        dMail.innerText = Email : ${mail.value};
+	}
+	function showMobile() {
+        dMob.innerText = Mobile : ${mob.value};
+    }
+	function resetForm() {
+		name.value = "";
+        gender.value = "";
+        email.value = "";
+        mobile.value = "";
+	}
+	function resetDisplay() {
+        dName.innerText =  ``;
+        // document.getElementById("dName").innerText = "Name";
+        // document.getElementById("dGender").innerText = "Gender";
+        // document.getElementById("dEmail").innerText = "Email";
+        // document.getElementById("dMobile").innerText = "Mobile";
+    }
+
+//  let head = document.getElementById("heading");
+//     let btn = document.getElementById("btn");
+//     btn.addEventListener("click",Print)
+//     function Print(){
+//         alert("Clicked");
+//         head.innerText = "Reactjs";
+//     }
+//     let btn1 = document.getElementById("btn1");
+//     btn1.addEventListener("click",PrintJava)
+//     function PrintJava(){
+//         head.innerText = "JavaScript";
+//     } 
+
+</script>
+</html>

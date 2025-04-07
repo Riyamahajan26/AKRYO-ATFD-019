@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="hadds">domid</h1> -->
+    <button id="booknow" >click here</button>
+    <br>
+    <br>
+    <button id="bookin" >cencal</button>
+    <br>
+    <br>
+    
+    <!-- <h2>ritesh</h2> -->
+    <!-- <h1 id="Box">ritesh</h1> -->
+     <button id="change">chennge text</button>
+     <h1 id="Box">ritesh</h1>
+
+</body>
+<script>
+    let btn="click here"
+    console.log(btn);
+// / docomens ko call krne  ke liye "is sintexka  usekrte he ""
+    let head= document.getElementById("hadds")
+    console.log(head);
+    // andarke text  ko call krne ke liye  "innertext" ka use kerte he  
+    console.log(head.innerText);
+    let booknow=addEventListener("click",print)
+
+    function print(){
+        // console.log("already click")
+        alert("you ticket has been booked")
+    }
+
+
+    let bookin=addEventListener("click",prints)
+
+    function prints(){
+        // console.log("already click")
+        alert("you ticket has been cencal")
+    }
+
+    let myBox = document.getElementById("Box");
+    // myBox.innerText = "ritesh";
+    
+    let change = document.getElementById("change");
+    change.addEventListener("click",ChangeName)
+    function ChangeName(){
+        myBox.innerText ="ajay"
+    }
+   
+
+
+
+
+</script>
+</html>

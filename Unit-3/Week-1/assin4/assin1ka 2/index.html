@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Akrypt Employee Records</title>
+    <style>
+      .employee-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        width: 200px;
+        /* display: grid; */
+      }
+      #card-container{
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Use this form for taking the inputs -->
+    <form id="form">
+      <input placeholder="Name" type="text" id="name" required />
+      <input placeholder="Employee ID" type="text" id="employee_id" required />
+      <select id="department" required>
+        <option value="">Select Department</option>
+        <option value="HR">HR</option>
+        <option value="Finance">Finance</option>
+        <option value="Engineering">Engineering</option>
+      </select>
+      <input placeholder="Experience" type="number" id="experience" required />
+      <input placeholder="Email" type="email" id="email" required />
+      <input placeholder="Mobile No." type="number" id="mobile" required />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Use this select tag for filtering -->
+    <select id="filter">
+      <option value="">Select Department</option>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+      <option value="Engineering">Engineering</option>
+    </select>
+
+    <div id="card-container"></div>
+<br><br><br><br>
+    
+
+
+    <script>
+      // Employee data array to hold all records
+      let employees = [];
+
+      // Handle form submission
+      document.getElementById('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get values from the form
+        const name = document.getElementById('name').value;
+        const employee_id = document.getElementById('employee_id').value;
+        const department = document.getElementById('department').value;
+        const experience = document.getElementById('experience').value;
+        const email = document.getElementById('email').value;
+        const mobile = document.getElementById('mobile').value;
+
+        // Create an employee object
+        const employee = {
+          name,
+          employee_id,
+          department,
+          experience,
+          email,
+          mobile
+        };
+
+        // Push employee object to the array
+        employees.push(employee);
+
+        // Clear the form fields after submission
+        document.getElementById('form').reset();
+
+        // Render all employees after adding a new one
+        renderEmployees();
+      });
+
+      // Render employee records as cards
+      function renderEmployees() {
+        const cardContainer = document.getElementById('card-container');
+        cardContainer.innerHTML = ''; // Clear existing cards
+
+        // Get selected filter value
+        const filterValue = document.getElementById('filter').value;
+
+        // Filter employees based on selected department
+        const filteredEmployees = filterValue
+          ? employees.filter(employee => employee.department === filterValue)
+          : employees;
+
+        // Create and append employee cards
+        filteredEmployees.forEach(employee => {
+          const card = document.createElement('div');
+          card.classList.add('employee-card');
+          card.innerHTML = `
+            ${employee.name}<br>
+             ${employee.employee_id}<br>
+             ${employee.department}<br>
+             ${employee.experience} <br>
+             ${employee.email}<br>
+            ${employee.mobile}<br>
+          `;
+          cardContainer.appendChild(card);
+        });
+      }
+
+      // Add event listener to filter dropdown
+      document.getElementById('filter').addEventListener('change', renderEmployees);
+
+
+
+    </script>
+  </body>
+</html>

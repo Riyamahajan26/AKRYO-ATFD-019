@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mainDiv {
+      text-align: center;
+      background-color: yellowgreen;
+      width: 300px;
+      height: 330px;
+      margin: auto;
+    }
+
+    .image {
+      width: 100%;
+    }
+
+    #cont {
+      gap: 10px;
+      display: flex;
+
+    }
+    .btn{
+      background-color: blue;
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="cont">
+
+  </div>
+
+
+</body>
+<script>
+
+
+  let arr = [
+    {
+      item: "PS4 Pro",
+      original: 399.99,
+      discount: 10,
+      stock: 3,
+      total: 1199.97,
+      image: "https://akrypttechnologies.com/_next/static/media/Akrypt%20Technologies%20Logo%20Full%20Transparent%20White.fb8c32d4.svg",
+    },
+    {
+      discount: 10,
+      item: "Xbox One X",
+      original: 499.99,
+      stock: 1,
+      total: 449.991,
+      image: "https://akrypttechnologies.com/_next/static/media/Akrypt%20Technologies%20Logo%20Full%20Transparent%20White.fb8c32d4.svg",
+
+    },
+    {
+      item: "Nintendo Switch",
+      original: 299.99,
+      stock: 4,
+      image: "https://akrypttechnologies.com/_next/static/media/Akrypt%20Technologies%20Logo%20Full%20Transparent%20White.fb8c32d4.svg",
+
+      total: 1199.96
+    },
+    {
+      discount: 10,
+
+      item: "PS2 Console",
+      original: 299.99,
+      stock: 1,
+      image: "https://akrypttechnologies.com/_next/static/media/Akrypt%20Technologies%20Logo%20Full%20Transparent%20White.fb8c32d4.svg",
+      total: 59.99799999999999
+    },
+    {
+      discount: 10,
+      item: "Nintendo 64",
+      original: 199.99,
+      stock: 2,
+      image: "https://akrypttechnologies.com/_next/static/media/Akrypt%20Technologies%20Logo%20Full%20Transparent%20White.fb8c32d4.svg",
+
+      total: 139.993
+    }
+  ]
+
+  let cont = document.getElementById("cont")
+
+  arr.forEach((element, i) => {
+    let div = document.createElement("div")
+    div.className = "mainDiv"
+    cont.append(div)
+
+    let item = document.createElement("h2")
+    item.innerText = `item : ${element.item}`
+
+    let discount = document.createElement("p")
+    discount.innerText =` Discount : ${element.discount}`
+
+    let original = document.createElement("p")
+    original.innerText = `Original : ${element.original}`
+
+    let stock = document.createElement("p")
+    stock.innerText =` Stock : ${element.stock}`
+
+    let total = document.createElement("h4")
+    total.innerText = `Total : ${element.total}`
+
+    let image = document.createElement("img")
+    image.setAttribute("src", element.image)
+    image.className = "image"
+
+    let button=document.createElement("button");
+    button.innerText="Buy now"
+    button.className="btn"
+
+    div.append(item, discount, original, stock, total, image,button)
+  });
+
+</script>
+
+</html>

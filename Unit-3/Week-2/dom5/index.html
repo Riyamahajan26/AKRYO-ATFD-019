@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .delete {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form">
+      <input type="text" name="name" id="" placeholder="Name" />
+      <br /><br />
+      <input type="text" name="email" id="" placeholder="Email" />
+      <br /><br />
+
+      <select name="course" id="">
+        <option value="">Select Course</option>
+        <option value="fswd">FSWD</option>
+        <option value="fd">FD</option>
+        <option value="bd">BD</option>
+      </select>
+      <br /><br />
+      <input type="submit" value="submit" name="sumbit" />
+    </form>
+
+    <br />
+    <br />
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>S No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Fees</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody"></tbody>
+    </table>
+  </body>
+
+  <script>
+    // Form Handle
+
+    let form = document.getElementById("form");
+    let tablebody = document.getElementById("tablebody");
+
+    let arr = [];
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let obj = {
+        name: form.name.value,
+        email: form.email.value,
+        course: form.course.value,
+      };
+
+      //   console.log(obj);
+      arr.push(obj);
+      //   console.log(arr);
+
+      tablebody.innerHTML = null;
+      formData(arr);
+    });
+
+    function formData(arr) {
+      arr.forEach((el, ind) => {
+        let mainTR = document.createElement("tr");
+
+        let snTD = document.createElement("td");
+
+        snTD.innerText = ind + 1;
+
+        let nameTD = document.createElement("td");
+
+        nameTD.innerText = el.name;
+        let emailTD = document.createElement("td");
+
+        emailTD.innerText = el.email;
+        let courseTD = document.createElement("td");
+
+        courseTD.innerText = el.course;
+        let feesTD = document.createElement("td");
+
+        el.course == "fswd"
+          ? (feesTD.innerText = "Rs.9999")
+          : el.course == "fd"
+          ? (feesTD.innerText = "Rs.7999")
+          : el.course == "bd"
+          ? (feesTD.innerText = "Rs.5999")
+          : null;
+
+        let deleteTD = document.createElement("td");
+        deleteTD.innerText = "Delete";
+        deleteTD.className = "delete";
+
+        deleteTD.addEventListener("click", () => {
+          Remove(ind);
+        });
+
+        mainTR.append(snTD, nameTD, emailTD, courseTD, feesTD, deleteTD);
+
+        tablebody.append(mainTR);
+      });
+    }
+
+    function Remove(index) {
+      arr.splice(index, 1);
+      tablebody.innerHTML = null;
+      formData(arr);
+    }
+  </script>
+</html>
